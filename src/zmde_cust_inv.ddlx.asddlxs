@@ -1,0 +1,19 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{
+    typeName: 'Custom & Export Invoice',
+    typeNamePlural: 'Custom & Export Invoice',
+    title:{ type: #STANDARD, value: 'billingdocument' } }
+annotate entity ZC_CUST_INV_N
+    with 
+{  
+@UI.facet: [{ id : 'billingdocument',
+       purpose: #STANDARD,
+       type: #IDENTIFICATION_REFERENCE,
+       label: 'Custom & Export Invoice',
+        position: 10 }]
+      @UI.lineItem:       [{ position: 10, label: 'billingdocument' },{ type: #FOR_ACTION , dataAction: 'ZPRINT', label: 'Generate Print'}]
+      @UI.identification: [{ position: 10, label: 'billingdocument' }]
+      @UI.selectionField: [{ position: 10 }]
+    BillingDocument;
+    
+}

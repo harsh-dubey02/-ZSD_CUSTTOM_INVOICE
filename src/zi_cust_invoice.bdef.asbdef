@@ -1,0 +1,22 @@
+managed implementation in class zbp_i_cust_invoice unique;
+strict ( 2 );
+
+define behavior for ZI_cust_invoice alias ZI_cust_invoice_doc
+with unmanaged save
+lock master
+authorization master ( instance )
+//etag master <field_name> " Uncomment if optimistic locking is needed
+{
+  action ( features : instance ) ZPRINT result [1] $self;
+  update;
+  field ( readonly ) billingdocument;
+
+  mapping for ztb_cust_invoice
+    {
+      billingdocument = billingdocument;
+      base64        = base64;
+    }
+
+
+
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'service defintion for custom & export invoice'
+define service ZSD_CUST_INVOICE {
+  expose ZC_CUST_INV_N;
+}
